@@ -12,6 +12,7 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 
 export class GameScene extends Phaser.Scene {
     private circle: Phaser.GameObjects.Ellipse & { body: Phaser.Physics.Arcade.Body };
+    private scoreText: Phaser.GameObjects.Text;
 
     constructor() {
         super(sceneConfig);
@@ -20,6 +21,7 @@ export class GameScene extends Phaser.Scene {
     public create() {
         this.circle = this.add.circle(400, 400, 100, 0x006140) as any;
         this.physics.add.existing(this.circle);
+        this.scoreText = this.add.text(0, 0, 'Hello World', { fontSize: '32px', color: '#000' });
     }
 
     public update() {
@@ -55,6 +57,8 @@ export class GameScene extends Phaser.Scene {
         if (spaceKey.isDown) {
             this.circle.body.setVelocity(0);
         }
+
+        this.scoreText.setText(JSON.stringify(this.circle.body.velocity))
 
     }
 }

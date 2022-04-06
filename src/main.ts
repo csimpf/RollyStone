@@ -1,5 +1,9 @@
 import * as Phaser from 'phaser';
 
+/*
+Todo: Increase Border width of stone
+*/
+
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
     visible: false,

@@ -26,6 +26,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
+        publicPath: "/RollyStone/",
     },
 
     mode: process.env.NODE_ENV == 'production' ? 'production' : 'development',
